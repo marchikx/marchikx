@@ -39,7 +39,7 @@ Every public repo: **`make verify`** (or `npm run verify` / `pytest`) from a fre
 - **[stripe-payments-ledger](https://github.com/marchikx/stripe-payments-ledger)** — Stripe webhook → 202 → worker, idempotent ledger
 - **[nextjs-security-kit](https://github.com/marchikx/nextjs-security-kit)** — CSRF, SSRF, rate limit, audit hash chain, RBAC
 - **[affiliate-core-saas](https://github.com/marchikx/affiliate-core-saas)** — Laravel multi-tenant affiliate + payouts
-- **[redline-detailing-landing](https://github.com/marchikx/redline-detailing-landing)** — Next.js premium landing
+- **[redline-detailing-landing](https://github.com/marchikx/redline-detailing-landing)** — Next.js premium landing · [open live](https://marchikx.github.io/redline-detailing-landing/)
 
 ---
 

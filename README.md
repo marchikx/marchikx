@@ -11,7 +11,7 @@ Spain · Open to paid contracts and a **1-day paid test task**
 
 | You are… | Open first |
 |---|---|
-| Founder needing automation that does not drop events | [`ops-hq-demo`](https://github.com/marchikx/ops-hq-demo) → [`webhook-relay`](https://github.com/marchikx/webhook-relay) |
+| Founder needing automation that does not drop events | [**live demo**](https://marchikx.github.io/ops-hq-demo/) → [`webhook-relay`](https://github.com/marchikx/webhook-relay) |
 | Agency delivering n8n / CRM work | [`perfex-n8n-bridge`](https://github.com/marchikx/perfex-n8n-bridge) → [`n8n-crm-control-plane`](https://github.com/marchikx/n8n-crm-control-plane) |
 | CTO reviewing senior engineering signal | [`stripe-payments-ledger`](https://github.com/marchikx/stripe-payments-ledger) · [`llm-guardrails`](https://github.com/marchikx/llm-guardrails) · [`nextjs-security-kit`](https://github.com/marchikx/nextjs-security-kit) |
 | Curious, not hiring yet | Give a paid test — or skim [`ted-tender-radar`](https://github.com/marchikx/ted-tender-radar) |
@@ -35,7 +35,7 @@ Every public repo: **`make verify`** (or `npm run verify` / `pytest`) from a fre
 
 ## Track C — Products & full-stack
 
-- **[ops-hq-demo](https://github.com/marchikx/ops-hq-demo)** — dark ops HQ demo (deliveries, payments, LLM budget)
+- **[ops-hq-demo](https://github.com/marchikx/ops-hq-demo)** — dark ops HQ demo (deliveries, payments, LLM budget) · [open live](https://marchikx.github.io/ops-hq-demo/)
 - **[stripe-payments-ledger](https://github.com/marchikx/stripe-payments-ledger)** — Stripe webhook → 202 → worker, idempotent ledger
 - **[nextjs-security-kit](https://github.com/marchikx/nextjs-security-kit)** — CSRF, SSRF, rate limit, audit hash chain, RBAC
 - **[affiliate-core-saas](https://github.com/marchikx/affiliate-core-saas)** — Laravel multi-tenant affiliate + payouts

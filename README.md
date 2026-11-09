@@ -1,86 +1,36 @@
 ﻿# Andrii Marchuk
 
-**Reliability patterns for AI and webhook automation** — delivery queues, payment ledgers, LLM cost guardrails, and agent pipelines. Built to be verified with one command.
+**Reliability for webhooks, payments, and LLM spend** — patterns you can verify with one command.
 
-Spain · Open to paid contracts and a **1-day paid test task**  
-→ [Open a Hire / test issue](https://github.com/marchikx/marchikx/issues/new?template=hire.md) · [Perfex↔n8n bridge on Gumroad](https://soluradev.gumroad.com/l/perfex-n8n-bridge)
+Spain · Paid contracts · **≤24h reply** · [Hire / paid test](https://github.com/marchikx/marchikx/issues/new?template=hire.md) · [Gumroad: Perfex↔n8n](https://soluradev.gumroad.com/l/perfex-n8n-bridge)
 
----
+**Proof:** [live Ops HQ](https://marchikx.github.io/ops-hq-demo/) runs `webhook-relay` → DLQ, Stripe `202→worker`, `llm-guardrails` deny — Playwright-covered.
 
-## Start here by who you are
-
-| You are… | Open first |
+| Pin | Why open it |
 |---|---|
-| Founder needing automation that does not drop events | [**live demo**](https://marchikx.github.io/ops-hq-demo/) → [`webhook-relay`](https://github.com/marchikx/webhook-relay) |
-| Agency delivering n8n / CRM work | [`perfex-n8n-bridge`](https://github.com/marchikx/perfex-n8n-bridge) → [`n8n-crm-control-plane`](https://github.com/marchikx/n8n-crm-control-plane) |
-| CTO reviewing senior engineering signal | [`stripe-payments-ledger`](https://github.com/marchikx/stripe-payments-ledger) · [`llm-guardrails`](https://github.com/marchikx/llm-guardrails) · [`nextjs-security-kit`](https://github.com/marchikx/nextjs-security-kit) |
-| Curious, not hiring yet | Give a paid test — or skim [`ted-tender-radar`](https://github.com/marchikx/ted-tender-radar) |
+| [ops-hq-demo](https://github.com/marchikx/ops-hq-demo) | Interactive failure-path console |
+| [webhook-relay](https://github.com/marchikx/webhook-relay) | Outbox, lease fencing, HMAC, DLQ |
+| [stripe-payments-ledger](https://github.com/marchikx/stripe-payments-ledger) | Idempotent Stripe 202→worker |
+| [llm-guardrails](https://github.com/marchikx/llm-guardrails) | Fail-closed daily ceiling |
+| [nextjs-security-kit](https://github.com/marchikx/nextjs-security-kit) | CSRF TTL, SSRF, audit chain |
+| [perfex-n8n-bridge](https://github.com/marchikx/perfex-n8n-bridge) | Perfex CRM ↔ n8n product |
 
-Every public repo: **`make verify`** (or `npm run verify` / `pytest`) from a fresh clone → exit 0. MIT. CI on `main`.
-
-### CI on the six pins (click any badge)
-
-[![ops-hq-demo](https://github.com/marchikx/ops-hq-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/ops-hq-demo/actions)
-[![webhook-relay](https://github.com/marchikx/webhook-relay/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/webhook-relay/actions)
-[![stripe-payments-ledger](https://github.com/marchikx/stripe-payments-ledger/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/stripe-payments-ledger/actions)
-[![llm-guardrails](https://github.com/marchikx/llm-guardrails/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/llm-guardrails/actions)
-[![nextjs-security-kit](https://github.com/marchikx/nextjs-security-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/nextjs-security-kit/actions)
-[![ted-tender-radar](https://github.com/marchikx/ted-tender-radar/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/ted-tender-radar/actions)
+Every public repo: `make verify` / `npm run verify` → exit 0. MIT. CI on `main`.
 
 ---
 
-## Track A — Integrations & reliability
+<details>
+<summary>More repos (not pins)</summary>
 
-- **[webhook-relay](https://github.com/marchikx/webhook-relay)** — outbox/inbox, leases, backoff, DLQ, HMAC, idempotency
-- **[n8n-crm-control-plane](https://github.com/marchikx/n8n-crm-control-plane)** — signed n8n actions + HubSpot / Pipedrive / Salesforce adapters
-- **[perfex-n8n-bridge](https://github.com/marchikx/perfex-n8n-bridge)** — Perfex CRM ↔ n8n (product on Gumroad)
+- [n8n-crm-control-plane](https://github.com/marchikx/n8n-crm-control-plane) — signed n8n actions + HubSpot/Pipedrive/Salesforce
+- [intent-radar](https://github.com/marchikx/intent-radar) — Ashby ATS intake → gates → score
+- [ted-tender-radar](https://github.com/marchikx/ted-tender-radar) — TED notice normalize/score (offline fixtures)
+- [solura-ai-bot](https://github.com/marchikx/solura-ai-bot) — Telegram + Gemini + SQLite
+- [affiliate-core-saas](https://github.com/marchikx/affiliate-core-saas) — Laravel multi-tenant affiliate
+- [redline-detailing-landing](https://github.com/marchikx/redline-detailing-landing) — Next.js landing
 
-## Track B — AI, agents & data
+</details>
 
-- **[llm-guardrails](https://github.com/marchikx/llm-guardrails)** — fail-closed daily ceiling, kill switch, PII redaction
-- **[intent-radar](https://github.com/marchikx/intent-radar)** — Ashby ATS intake → normalize → gates → score (offline fixtures)
-- **[ted-tender-radar](https://github.com/marchikx/ted-tender-radar)** — TED notice normalize/score + evidence store
-- **[solura-ai-bot](https://github.com/marchikx/solura-ai-bot)** — Telegram + Gemini + SQLite, layered Python
+### Bar I hire against
 
-## Track C — Products & full-stack
-
-- **[ops-hq-demo](https://github.com/marchikx/ops-hq-demo)** — dark ops HQ demo (deliveries, payments, LLM budget) · [open live](https://marchikx.github.io/ops-hq-demo/)
-- **[stripe-payments-ledger](https://github.com/marchikx/stripe-payments-ledger)** — Stripe webhook → 202 → worker, idempotent ledger
-- **[nextjs-security-kit](https://github.com/marchikx/nextjs-security-kit)** — CSRF, SSRF, rate limit, audit hash chain, RBAC
-- **[affiliate-core-saas](https://github.com/marchikx/affiliate-core-saas)** — Laravel multi-tenant affiliate + payouts
-- **[redline-detailing-landing](https://github.com/marchikx/redline-detailing-landing)** — Next.js premium landing · [open live](https://marchikx.github.io/redline-detailing-landing/)
-
----
-
-## How I work
-
-- Prefer **async 202 → worker** over sync webhook processing
-- **Fail-closed** on cost and security gates
-- Tests cover **failure paths**, not only happy paths
-- One-command verify so you can check without trusting a screenshot
-
-## Engineering bar (what a CTO can verify in 10 minutes)
-
-| Check | Evidence |
-|---|---|
-| Live UI, not a screenshot | [ops-hq-demo](https://marchikx.github.io/ops-hq-demo/) — HTTP 200 static build from seed data |
-| Webhook reliability | [`webhook-relay`](https://github.com/marchikx/webhook-relay) — outbox, leases, backoff, DLQ, HMAC, idempotency + green CI |
-| Money path | [`stripe-payments-ledger`](https://github.com/marchikx/stripe-payments-ledger) — Stripe webhook → **202 → worker**, idempotent ledger |
-| LLM spend control | [`llm-guardrails`](https://github.com/marchikx/llm-guardrails) — daily ceiling + kill switch, fail-closed |
-| App security primitives | [`nextjs-security-kit`](https://github.com/marchikx/nextjs-security-kit) — CSRF, SSRF guard, rate limit, audit hash chain, RBAC |
-| Fresh clone trust | every public repo: `make verify` / `npm run verify` / `pytest` → exit 0 on `main` CI |
-
-I optimize for **loss prevention** (dropped webhooks, double charges, unbounded LLM spend), not for star counts.
-
-### What this profile is *not*
-
-- Not a star farm — verify with clone + CI, not popularity contests  
-- The ops HQ demo is a **seeded static build** (honest), not fake production traffic  
-- Named client case studies appear only when a client agrees in writing
-
-## Hire
-
-1. Open the hire issue with your problem in one paragraph  
-2. Optional: buy the Perfex↔n8n bridge if that is the exact need  
-3. I reply with a scoped diagnostic or a 1-day paid test acceptance criteria
-
+Async **202 → worker**, fail-closed cost/security gates, failure-path tests, no fake prod traffic claims.

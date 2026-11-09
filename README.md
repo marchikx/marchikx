@@ -18,6 +18,15 @@ Spain · Open to paid contracts and a **1-day paid test task**
 
 Every public repo: **`make verify`** (or `npm run verify` / `pytest`) from a fresh clone → exit 0. MIT. CI on `main`.
 
+### CI on the six pins (click any badge)
+
+[![ops-hq-demo](https://github.com/marchikx/ops-hq-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/ops-hq-demo/actions)
+[![webhook-relay](https://github.com/marchikx/webhook-relay/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/webhook-relay/actions)
+[![stripe-payments-ledger](https://github.com/marchikx/stripe-payments-ledger/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/stripe-payments-ledger/actions)
+[![llm-guardrails](https://github.com/marchikx/llm-guardrails/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/llm-guardrails/actions)
+[![nextjs-security-kit](https://github.com/marchikx/nextjs-security-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/nextjs-security-kit/actions)
+[![ted-tender-radar](https://github.com/marchikx/ted-tender-radar/actions/workflows/ci.yml/badge.svg)](https://github.com/marchikx/ted-tender-radar/actions)
+
 ---
 
 ## Track A — Integrations & reliability
@@ -62,6 +71,12 @@ Every public repo: **`make verify`** (or `npm run verify` / `pytest`) from a fre
 | Fresh clone trust | every public repo: `make verify` / `npm run verify` / `pytest` → exit 0 on `main` CI |
 
 I optimize for **loss prevention** (dropped webhooks, double charges, unbounded LLM spend), not for star counts.
+
+### What this profile is *not*
+
+- Not a star farm — verify with clone + CI, not popularity contests  
+- The ops HQ demo is a **seeded static build** (honest), not fake production traffic  
+- Named client case studies appear only when a client agrees in writing
 
 ## Hire
 

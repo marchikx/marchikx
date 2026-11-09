@@ -1,6 +1,6 @@
 ---
 name: Hire / paid test task
-about: Request a short paid technical trial or discuss contract work
+about: One problem → scoped diagnostic or 1-day paid test with acceptance checks
 title: "[Hire] "
 labels: hire
 assignees: marchikx
@@ -10,21 +10,34 @@ assignees: marchikx
 
 - Company / role:
 - Timezone:
+- How you found this profile:
 
-## What you need built or fixed
+## The problem (one paragraph)
 
-Describe the outcome, not the stack wish-list. Link any repo, ticket, or diagram if you have one.
+What is breaking or missing today? Prefer outcome over stack wish-list.  
+Links (repo / ticket / Loom / diagram) welcome.
+
+## Why this is urgent / valuable
+
+What happens if nothing changes in 30 days? (lost events, double charges, LLM spend, manual hours, blocked launch…)
 
 ## Constraints
 
 - Deadline (if any):
 - Budget band (optional):
-- Stack you already use:
+- Stack already in production:
+- Must-not-break systems:
 
-## How we'll verify success
+## Acceptance checks for a 1-day paid test (optional but preferred)
 
-List 2–5 concrete acceptance checks (commands, screenshots, or metrics).
+List 2–5 checks I can run or demo (commands, HTTP probes, screenshots, metrics).
+
+Example shape:
+
+1. Fresh clone + `npm run verify` / `pytest` exits 0 on a thin spike
+2. Webhook path returns 202 and a worker processes / DLQs correctly
+3. One failure-mode test you care about (retry, idempotency, budget kill switch)
 
 ## Contact
 
-- Email or Telegram (you prefer replies here):
+- Email or Telegram (preferred reply channel):

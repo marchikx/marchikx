@@ -1,45 +1,45 @@
 ---
 name: Hire / paid test task
-about: Scoped diagnostic or 1-day paid test — I reply ≤24h with three ready checks
+about: Tell me what is breaking — I reply within 24h
 title: "[Hire] "
 labels: hire
 assignees: marchikx
 ---
 
-## SLA
+## How this works
 
-I reply **within 24 hours** (Europe/Madrid business days) with either a scoped estimate or three ready technical checks for a paid test. Sensitive details (repo access, secrets, customer data) — **after my first reply**, not in this public issue.
+I reply **within 24 hours** (Europe/Madrid business days) with either a short estimate or three concrete checks for a **1-day paid test**.
 
-Secondary product: [Perfex↔n8n bridge on Gumroad](https://soluradev.gumroad.com/l/perfex-n8n-bridge).
+Do **not** paste secrets, customer data, or private repo invites here. Share those after I reply.
+
+Also sell: [Perfex ↔ n8n bridge (Gumroad)](https://soluradev.gumroad.com/l/perfex-n8n-bridge).
 
 ## Who you are
 
 - Company / role:
 - Timezone:
-- Preferred reply channel (email / Telegram):
+- Best way to reach you (email or Telegram):
 
-## The problem (one paragraph)
+## What is breaking (plain language)
 
-What is breaking or missing today? Prefer outcome over stack wish-list.
+One paragraph. Example: “Stripe webhooks sometimes double-process refunds” or “n8n misses Perfex events overnight.”
 
-## Why this matters in 30 days
+## Why it matters
 
-Lost events, double charges, LLM spend, manual hours, blocked launch — pick what hurts.
+What happens if nothing changes for 30 days?
 
-## Constraints
+## Constraints (optional)
 
-- Deadline (if any):
-- Budget band (optional):
-- Stack already in production:
-- Must-not-break systems:
+- Deadline:
+- Budget band:
+- Stack already live:
+- Systems we must not break:
 
-## My three ready checks (I bring these — you do not write them)
+## What I usually bring to a paid test (you can change this)
 
-Unless you override, a 1-day paid test starts from:
-
-1. Fresh clone + `npm run verify` / `make verify` exits 0 on a thin spike in your stack
-2. Webhook path returns **202** and a worker delivers / retries / DLQs correctly (or Stripe ledger `processWork` applies)
-3. One failure mode you care about: bad HMAC, stale lease, unknown LLM model deny, or CRM adapter 401/429
+1. Fresh clone of a thin spike + `npm run verify` / `make verify` exits 0  
+2. One happy path that matches your stack (webhook `202` + worker, or payment ledger, or LLM gate)  
+3. One failure path you care about (retry/DLQ, bad signature, over-budget deny)
 
 ## Contact
 

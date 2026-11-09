@@ -1,36 +1,32 @@
 ﻿# Andrii Marchuk
 
-**Reliability for webhooks, payments, and LLM spend** — patterns you can verify with one command.
+I fix systems that **lose money or events** when webhooks, payments, or LLM calls fail.
 
-Spain · Paid contracts · **≤24h reply** · [Hire / paid test](https://github.com/marchikx/marchikx/issues/new?template=hire.md) · [Gumroad: Perfex↔n8n](https://soluradev.gumroad.com/l/perfex-n8n-bridge)
+Spain · paid contracts · reply ≤24h  
+→ [Tell me what’s breaking](https://github.com/marchikx/marchikx/issues/new?template=hire.md)
 
-**Proof:** [live Ops HQ](https://marchikx.github.io/ops-hq-demo/) runs `webhook-relay` → DLQ, Stripe `202→worker`, `llm-guardrails` deny — Playwright-covered.
+### In 60 seconds
 
-| Pin | Why open it |
+Open the live console and press one button:  
+**[Ops HQ demo](https://marchikx.github.io/ops-hq-demo/)** — a failing webhook goes to DLQ, a payment is accepted as `202` then processed, an over-budget LLM call is denied.
+
+That UI imports three libraries from this profile (not screenshots). Seed numbers on the page are demo data; the buttons run real code.
+
+### If you hire me
+
+| You need | Start here |
 |---|---|
-| [ops-hq-demo](https://github.com/marchikx/ops-hq-demo) | Interactive failure-path console |
-| [webhook-relay](https://github.com/marchikx/webhook-relay) | Outbox, lease fencing, HMAC, DLQ |
-| [stripe-payments-ledger](https://github.com/marchikx/stripe-payments-ledger) | Idempotent Stripe 202→worker |
-| [llm-guardrails](https://github.com/marchikx/llm-guardrails) | Fail-closed daily ceiling |
-| [nextjs-security-kit](https://github.com/marchikx/nextjs-security-kit) | CSRF TTL, SSRF, audit chain |
-| [perfex-n8n-bridge](https://github.com/marchikx/perfex-n8n-bridge) | Perfex CRM ↔ n8n product |
+| Webhooks that retry and don’t vanish | [webhook-relay](https://github.com/marchikx/webhook-relay) |
+| Stripe webhooks that don’t double-charge | [stripe-payments-ledger](https://github.com/marchikx/stripe-payments-ledger) |
+| LLM spend that can’t blow the budget | [llm-guardrails](https://github.com/marchikx/llm-guardrails) |
+| Next.js CSRF / SSRF basics | [nextjs-security-kit](https://github.com/marchikx/nextjs-security-kit) |
+| Perfex CRM → n8n without dropped events | [perfex-n8n-bridge](https://github.com/marchikx/perfex-n8n-bridge) · [Gumroad](https://soluradev.gumroad.com/l/perfex-n8n-bridge) |
 
-Every public repo: `make verify` / `npm run verify` → exit 0. MIT. CI on `main`.
-
----
+Fresh clone: `make verify` / `npm run verify` → exit 0. MIT.
 
 <details>
-<summary>More repos (not pins)</summary>
+<summary>Other public repos</summary>
 
-- [n8n-crm-control-plane](https://github.com/marchikx/n8n-crm-control-plane) — signed n8n actions + HubSpot/Pipedrive/Salesforce
-- [intent-radar](https://github.com/marchikx/intent-radar) — Ashby ATS intake → gates → score
-- [ted-tender-radar](https://github.com/marchikx/ted-tender-radar) — TED notice normalize/score (offline fixtures)
-- [solura-ai-bot](https://github.com/marchikx/solura-ai-bot) — Telegram + Gemini + SQLite
-- [affiliate-core-saas](https://github.com/marchikx/affiliate-core-saas) — Laravel multi-tenant affiliate
-- [redline-detailing-landing](https://github.com/marchikx/redline-detailing-landing) — Next.js landing
+[n8n-crm-control-plane](https://github.com/marchikx/n8n-crm-control-plane) · [intent-radar](https://github.com/marchikx/intent-radar) · [ted-tender-radar](https://github.com/marchikx/ted-tender-radar) · [solura-ai-bot](https://github.com/marchikx/solura-ai-bot) · [affiliate-core-saas](https://github.com/marchikx/affiliate-core-saas) · [redline-detailing-landing](https://github.com/marchikx/redline-detailing-landing) · [ops-hq-demo](https://github.com/marchikx/ops-hq-demo)
 
 </details>
-
-### Bar I hire against
-
-Async **202 → worker**, fail-closed cost/security gates, failure-path tests, no fake prod traffic claims.

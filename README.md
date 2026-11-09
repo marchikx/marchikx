@@ -50,6 +50,19 @@ Every public repo: **`make verify`** (or `npm run verify` / `pytest`) from a fre
 - Tests cover **failure paths**, not only happy paths
 - One-command verify so you can check without trusting a screenshot
 
+## Engineering bar (what a CTO can verify in 10 minutes)
+
+| Check | Evidence |
+|---|---|
+| Live UI, not a screenshot | [ops-hq-demo](https://marchikx.github.io/ops-hq-demo/) — HTTP 200 static build from seed data |
+| Webhook reliability | [`webhook-relay`](https://github.com/marchikx/webhook-relay) — outbox, leases, backoff, DLQ, HMAC, idempotency + green CI |
+| Money path | [`stripe-payments-ledger`](https://github.com/marchikx/stripe-payments-ledger) — Stripe webhook → **202 → worker**, idempotent ledger |
+| LLM spend control | [`llm-guardrails`](https://github.com/marchikx/llm-guardrails) — daily ceiling + kill switch, fail-closed |
+| App security primitives | [`nextjs-security-kit`](https://github.com/marchikx/nextjs-security-kit) — CSRF, SSRF guard, rate limit, audit hash chain, RBAC |
+| Fresh clone trust | every public repo: `make verify` / `npm run verify` / `pytest` → exit 0 on `main` CI |
+
+I optimize for **loss prevention** (dropped webhooks, double charges, unbounded LLM spend), not for star counts.
+
 ## Hire
 
 1. Open the hire issue with your problem in one paragraph  
